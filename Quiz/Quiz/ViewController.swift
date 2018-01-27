@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         }
         let question:String = questions[questionIndex]
         questionLabel.text = question
+        answerLabel.text = "???"
     }
     @IBAction func showAnswer(_sender: UIButton){
         let answer:String = answers[questionIndex]
@@ -40,6 +41,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        questionLabel.text = questions[questionIndex]
         // Do any additional setup after loading the view, typically from a nib.
     }
 
