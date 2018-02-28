@@ -62,6 +62,28 @@ class ViewController: UIViewController {
     @IBAction func dismissKeyBoard(_ sender: UITapGestureRecognizer){
         textField.resignFirstResponder()
     }
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let allowedCharacterSet = CharacterSet(charactersIn: "0123456789.")
+        let replacementStringCharacterSet = CharacterSet(charactersIn: string)
+        if !replacementStringCharacterSet.isSubset(of: allowedCharacterSet) {
+            print("Rejected (Invalid Character)")
+            return false
+        }
+
+        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
+        let replacementTextHasDecimalSeparator = string.range(of: ".")
+        
+        if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil {
+            return false
+        } else {
+            return true
+            
+        }
+    }
+    
         func updateCelsiusLabel() {
             if let celsiusValue = celsiusValue {
                 celsiusLabel.text = numberFormatter.string(from: NSNumber(value:celsiusValue.value))

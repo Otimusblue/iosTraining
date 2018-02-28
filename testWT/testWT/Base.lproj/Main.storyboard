@@ -26,7 +26,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="fahrenheitFieldEdittingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="9GQ-ad-oaN"/>
                                 </connections>
@@ -73,6 +73,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="QvO-YN-PqM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0jU-ou-wyO"/>
                             <constraint firstItem="wrJ-XT-pB1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6eo-nT-drg"/>
@@ -91,6 +92,9 @@
                             <constraint firstItem="y8f-od-pQb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="11" id="qdY-sk-IDo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6PW-cW-C6d" appends="YES" id="G0D-ew-UsJ"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="celsiusLabel" destination="5B3-e4-a8E" id="oXY-13-DKt"/>
@@ -98,9 +102,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="4La-yC-P3n">
+                <tapGestureRecognizer id="6PW-cW-C6d">
                     <connections>
-                        <action selector="dismissKeyBoard:" destination="BYZ-38-t0r" id="bfg-Tu-sV4"/>
+                        <action selector="dismissKeyBoard:" destination="BYZ-38-t0r" id="Yfg-0m-gH7"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
