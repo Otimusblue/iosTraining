@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , UITextFieldDelegate {
     
    // khau bao bien lam viec voi storyboard
     @IBOutlet weak var celsiusLabel: UILabel!
