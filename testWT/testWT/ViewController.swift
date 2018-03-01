@@ -14,6 +14,8 @@ class ViewController: UIViewController , UITextFieldDelegate {
     @IBOutlet weak var celsiusLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     
+    
+    
     // khai bao bien lam viec voi gia tri cua user nhap vao
     var fahrenheitValue : Measurement<UnitTemperature>?{
         
