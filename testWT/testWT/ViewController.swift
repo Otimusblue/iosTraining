@@ -91,6 +91,24 @@ class ViewController: UIViewController , UITextFieldDelegate {
                 celsiusLabel.text = "???"
             }
         }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        let date = getCurrentTime()
+        let hour: Int = Int(date)!
+        if (hour >= 19 || hour <= 7) {
+            view.backgroundColor = UIColor.black
+        }
+    }
+    
+    // my add for the Silver Challenge
+    func getCurrentTime() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH"
+        let time = formatter.string(from: date)
+        return time
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
