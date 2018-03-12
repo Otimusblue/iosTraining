@@ -131,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="324" y="-170"/>
         </scene>
-        <!--View Controller-->
+        <!--More-->
         <scene sceneID="xC7-nf-TsF">
             <objects>
                 <viewController id="CFu-Qi-8VO" customClass="WKViewController" customModule="testWT" customModuleProvider="target" sceneMemberID="viewController">
@@ -157,7 +157,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8As-wr-An0"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="ku7-fa-AaN"/>
+                    <tabBarItem key="tabBarItem" title="More" id="ku7-fa-AaN"/>
                     <connections>
                         <outlet property="webView" destination="gEa-uE-aMn" id="ofD-Wk-yIy"/>
                     </connections>
