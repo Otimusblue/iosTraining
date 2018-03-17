@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E631525205CE5B6000F987E /* buttonEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E631524205CE5B6000F987E /* buttonEdit.swift */; };
 		0EA4D4D62055328700527EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA4D4D52055328700527EAF /* AppDelegate.swift */; };
 		0EA4D4D82055328700527EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA4D4D72055328700527EAF /* ViewController.swift */; };
 		0EA4D4DB2055328700527EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA4D4D92055328700527EAF /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		0EA4D4E02055328700527EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA4D4DE2055328700527EAF /* LaunchScreen.storyboard */; };
 		0EA4D4EB2055328700527EAF /* duoiHinhTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA4D4EA2055328700527EAF /* duoiHinhTests.swift */; };
 		0EA4D4F62055328700527EAF /* duoiHinhUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA4D4F52055328700527EAF /* duoiHinhUITests.swift */; };
+		0EFF1403205D1E2B00DCEAEC /* button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFF1402205D1E2B00DCEAEC /* button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E631524205CE5B6000F987E /* buttonEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonEdit.swift; sourceTree = "<group>"; };
 		0EA4D4D22055328700527EAF /* duoiHinh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = duoiHinh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EA4D4D52055328700527EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EA4D4D72055328700527EAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		0EA4D4F12055328700527EAF /* duoiHinhUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = duoiHinhUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EA4D4F52055328700527EAF /* duoiHinhUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = duoiHinhUITests.swift; sourceTree = "<group>"; };
 		0EA4D4F72055328700527EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EFF1402205D1E2B00DCEAEC /* button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				0EA4D4DC2055328700527EAF /* Assets.xcassets */,
 				0EA4D4DE2055328700527EAF /* LaunchScreen.storyboard */,
 				0EA4D4E12055328700527EAF /* Info.plist */,
+				0E631524205CE5B6000F987E /* buttonEdit.swift */,
+				0EFF1402205D1E2B00DCEAEC /* button.swift */,
 			);
 			path = duoiHinh;
 			sourceTree = "<group>";
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E631525205CE5B6000F987E /* buttonEdit.swift in Sources */,
 				0EA4D4D82055328700527EAF /* ViewController.swift in Sources */,
 				0EA4D4D62055328700527EAF /* AppDelegate.swift in Sources */,
+				0EFF1403205D1E2B00DCEAEC /* button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

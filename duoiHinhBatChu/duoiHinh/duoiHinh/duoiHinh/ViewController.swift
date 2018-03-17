@@ -9,103 +9,122 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    
+    var answers : [String] = ["C","H","I","D","I","E","M"]
+    var answers1 : [String] = []
+    lazy var choice = addRandomCharacter(array: answers, index: 3)
+    var countt = 0
+    @objc func playTapped(sender: UIButton){
+        var answersNumber = answers.count
+        if (countt < answersNumber){
+        sender.isHidden = true
+            let lbl  = view.viewWithTag(countt+100) as! UIButton
+            lbl.setTitle(sender.titleLabel?.text, for: .normal)
+            answers1.append(lbl.titleLabel!.text!)
+       //sender.titleLabel?.text
+        countt+=1
+        }
+        if(countt == answersNumber){
+            if (answers1 == answers) {
+                let alert: UIAlertController = UIAlertController(title: "Thông Báo", message: "Ngon", preferredStyle: UIAlertControllerStyle.alert)
+                
+                let btn : UIAlertAction = UIAlertAction(title: "Thoát", style: .default, handler: nil)
+                alert.addAction(btn)
+                present(alert, animated: true, completion: nil)
+            }
+            else {
+                let alert: UIAlertController = UIAlertController(title: "Thông Báo", message: "Sai Rồi", preferredStyle: UIAlertControllerStyle.alert)
+                
+                let btn : UIAlertAction = UIAlertAction(title: "Thoát", style: .default, handler: nil)
+                let back: UIAlertAction = UIAlertAction(title: "Back", style: .default, handler: { (back) in
+                    //sender.isHidden = false
+                    
+                    
+                })
+                alert.addAction(btn)
+                alert.addAction(back)
+                present(alert, animated: true, completion: nil)
+                
+            }
+        }
+    }
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //in ra button o answer
-        var index = 3
-        var answers : [String] = ["C","H","I","D","I","E","M"]
-        let answers1 = answers
-        answers.shufffe()
-        let count = answers1.count
-        print(count)
-        for i in 0...6 {
-            // Answer button
-            let button : UIButton = UIButton(frame: CGRect(x: 10 + 50*i, y: 10, width: 40, height: 30))
-            
-            button.backgroundColor = UIColor.blue
-            button.layer.cornerRadius = 5
-            button.tag = i + 100
-            print(button.tag)
-            Answer.addSubview(button)
-        }
-        while (index > 0) {
-            let a: String = randomizeAvailableLetters()
-            if (!answers.contains(a)) {
-                answers.append(a)
-                index-=1
-            }
-            
-        }
-        print(answers)
-        
-        // in ra button o choice
-        var NoIndex = 0      // chi so hang
-        let mainScreen: CGRect = UIScreen.main.bounds;
-        var Y: CGFloat = 10
-        for i in 0...9 {
-            var X: CGFloat = CGFloat(10 + 50*NoIndex)
-            //Choice Button
-            
-            if (X + 70 > mainScreen.size.width){
-                Y = Y + 40
-                X = 10
-                NoIndex = 0
-            }
-            NoIndex = NoIndex + 1
-            let button : UIButton = UIButton(frame: CGRect(x:X,y:Y,width:40 ,height:30))
-            button.backgroundColor = UIColor.blue
-            button.layer.cornerRadius = 5
-            button.tag = i
-            Choice.addSubview(button)
-         
-         print(answers)
-         //Set text va action
-          
-         button.setTitle(answers[i], for: .normal)
-         button.addTarget(self, action: #selector(playTapped), for: .touchUpInside)
-    }
-     
-
-    }
- // ngoai class
-    @objc func playTapped(sender: UIButton){
-        //  while(count > 0){
-        sender.isHidden = true
-        
-        // }
-        
-        print(sender.titleLabel!.text)
+        choice.shuffle()
+        addButtonAnswers(number: answers.count)
+        addButtonChoice(number: choice.count)
+      
     }
     
-    func randomizeAvailableLetters() -> String {
-        let alphabet: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-        let rand = Int(arc4random_uniform(26))
-        return alphabet[rand]
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+       
     }
+    
+   // tao button cho answers
+    func addButtonAnswers(number: Int){
+            var NoIndex = 0
+            let mainScreen: CGRect = UIScreen.main.bounds;
+            var Y: CGFloat = 10
+            for i in 0...number - 1 {
+                var X: CGFloat = CGFloat(10 + 50 * NoIndex)
+                // kiem tra co tran button khong?
+                if (X + 70 > mainScreen.size.width){
+                    Y = Y + 40
+                    X = 10
+                    NoIndex = 0
+                }
+                NoIndex = NoIndex + 1
+                let button : UIButton = UIButton(frame: CGRect(x:X,y:Y,width:40 ,height:30))
+                button.backgroundColor = UIColor.blue
+                button.layer.cornerRadius = 5
+                button.tag = i + 100
+                Answer.addSubview(button)
+                print(button.tag)
+                
+            }
+        }
+        
+    
+   //tao button cho choice
+    func addButtonChoice(number: Int){
+            var NoIndex = 0
+            let mainScreen: CGRect = UIScreen.main.bounds;
+            var Y: CGFloat = 10
+            for i in 0...number - 1 {
+                var X: CGFloat = CGFloat(10 + 50*NoIndex)
+            // kiem tra co tran button khong?
+            if (X + 70 > mainScreen.size.width){
+                    Y = Y + 40
+                    X = 10
+                    NoIndex = 0
+                }
+                NoIndex = NoIndex + 1
+                let button : UIButton = UIButton(frame: CGRect(x:X,y:Y,width:40 ,height:30))
+                button.backgroundColor = UIColor.blue
+                button.layer.cornerRadius = 5
+                Choice.addSubview(button)
+            // them Text cho button
+                button.setTitle(choice[i],for : .normal)
+                button.addTarget(self, action:#selector(ViewController.playTapped(sender:)),  for: .touchUpInside)
+                
+                
+
+            }
+        }
+    
+    
+    
+   
+
 
 
     @IBOutlet weak var Choice: UIView!
     @IBOutlet weak var Answer: UIView!
+   
     
-    
-}
-extension Array {
-    public mutating func shufffe() {
-        var temp = [Element]()
-        while !isEmpty{
-        let i = Int(arc4random_uniform(UInt32(count)))
-        let obj = remove(at: i)
-        temp.append(obj)
-        }
-        self = temp
-    }
-    
+
+
 }
