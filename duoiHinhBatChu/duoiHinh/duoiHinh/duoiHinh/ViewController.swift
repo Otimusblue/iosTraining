@@ -47,7 +47,9 @@ class ViewController: UIViewController {
             }
         }
     }
-   
+//   @objc func playTapped2(sender: UIButton){
+//
+//    }
     
     
     override func viewDidLoad() {
@@ -83,6 +85,8 @@ class ViewController: UIViewController {
                 button.tag = i + 100
                 Answer.addSubview(button)
                 print(button.tag)
+                 button.addTarget(self, action:#selector(ViewController.playTapped(sender:)),  for: .touchUpInside)
+                
                 
             }
         }
